@@ -7,7 +7,7 @@ module.exports = ()=>{
 
     const themeColor = require("../helpers/themeColor.js")();
 
-    const view = new Composite({ layoutData: 'stretch', background: "#ffffff", id: 'registrationView', class:"activeView"}).appendTo(contentView);
+    const view = new Composite({ layoutData: 'stretch', background: "#ffffff", id: 'signInView', class:"activeView"}).appendTo(contentView);
 
     const scrollView = new ScrollView({layoutData: 'stretch', background: "#ffffff"}).appendTo(view);
 
@@ -55,7 +55,7 @@ module.exports = ()=>{
 
     ).appendTo(scrollView);
 
-    new Composite({ top:["prev()", 20], left:15, right:15, height:50, cornerRadius:25, highlightOnTouch:highlightOnTouchValue, background: themeColor})
+    new Composite({ top:["prev()", 30], left:15, right:15, height:50, cornerRadius:25, highlightOnTouch:highlightOnTouchValue, background: themeColor})
     .append(
 
         new TextView({alignment:"centerX", centerX:0, centerY:0, text:"Connexion", textColor:"#ffffff", font:"16px"})

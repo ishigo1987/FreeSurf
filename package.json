@@ -6,6 +6,7 @@
     "start": "tabris serve -a"
   },
   "dependencies": {
+    "base-64": "^1.0.0",
     "tabris": "~3.7.1"
   },
   "devDependencies": {

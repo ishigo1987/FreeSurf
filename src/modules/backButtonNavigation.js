@@ -12,6 +12,14 @@ module.exports = ()=>{
       
       if(activeView !== undefined){
 
+         if(["signUpView"].includes(activeView.id) === true){
+
+            kindOfAnimation.transform = { translationX: 100};
+
+            kindOfAnimation.opacity = 0;
+
+         }
+
         // This is a precaution i want to be sure that the animation happen only if the view need to be animated
         if(Object.keys(kindOfAnimation).length !== 0){
 
@@ -19,7 +27,7 @@ module.exports = ()=>{
 
                 if (animation.Message === 'Animation terminée') {
 
-                    activeView.dispose();
+                    return activeView.dispose();
                 }
             });
         }
