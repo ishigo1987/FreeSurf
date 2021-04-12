@@ -10,13 +10,13 @@
   <preference name="EnableDeveloperConsole" value="$IS_DEBUG" />
   <platform name="android">
     
-    <preference name="android-minSdkVersion" value="22" />
+    <!-- <preference name="android-minSdkVersion" value="22" />
     
     <preference name="android-compileSdkVersion" value="29" />
     
-    <!-- <preference name="android-build-tool" value="29.0.2" /> -->
+    <preference name="android-build-tool" value="29.0.2" />
     
-    <preference name="android-targetSdkVersion" value="29" />
+    <preference name="android-targetSdkVersion" value="29" /> -->
     
     <!-- This hack is for Android 9 and up for authorizing the app to go to internet -->
     <!-- We need to put it to false in production but i think that in production mode $IS_DEBUG === false -->
@@ -30,9 +30,9 @@
         <!-- <application android:requestLegacyExternalStorage="true" /> -->
     </edit-config>
     
-    <!-- <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest">
+    <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest">
       
-    </config-file> -->
+    </config-file>
     
     <!-- Changes mades only on TabrisJS 3.0+ -->
     
