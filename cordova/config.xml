@@ -8,4 +8,60 @@
     ishigo1987
   </author>
   <preference name="EnableDeveloperConsole" value="$IS_DEBUG" />
+  <platform name="android">
+    
+    <preference name="android-minSdkVersion" value="22" />
+    
+    <preference name="android-compileSdkVersion" value="29" />
+    
+    <preference name="android-build-tool" value="29.0.2" />
+    
+    <preference name="android-targetSdkVersion" value="29" />
+    
+    <!-- This hack is for Android 9 and up for authorizing the app to go to internet -->
+    <!-- We need to put it to false in production but i think that in production mode $IS_DEBUG === false -->
+    <!-- Problem during the development phase with the tabris audio plugin, i put it in comment for now -->
+    <!-- <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
+      <application android:usesCleartextTraffic="$IS_DEBUG" />
+    </edit-config> -->
+    
+    <edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:name='MainActivity']" mode="merge">
+        <activity android:windowSoftInputMode="adjustPan" />
+        <!-- <application android:requestLegacyExternalStorage="true" /> -->
+    </edit-config>
+    
+    <custom-preference name="android-manifest/uses-permission/@android:name" value="android.permission.FOREGROUND_SERVICE" />
+    
+    <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest">
+      
+    </config-file>
+    
+    <!-- Changes mades only on TabrisJS 3.0+ -->
+    
+    <resource-file src="res/android/values/freesurf_themes.xml" target="app/src/main/res/values/freesurf_themes.xml" />
+    
+    <preference name="Theme" value="@style/Theme.Freesurf" />
+    
+    <preference name="AndroidPersistentFileLocation" value="Internal" />
+    
+    <!-- <splash src="res/android/mdpi.png" density="mdpi" />
+    
+    <splash src="res/android/hdpi.png" density="hdpi" />
+    
+    <splash src="res/android/xhdpi.png" density="xhdpi" />
+    
+    <splash src="res/android/xxhdpi.png" density="xxhdpi"/>
+    
+    <splash src="res/android/xxxhdpi.png" density="xxhdpi"/>
+    
+    <icon src="res/android/mdpi.png" density="mdpi" />
+    
+    <icon src="res/android/hdpi.png" density="hdpi" />
+    
+    <icon src="res/android/xhdpi.png" density="xhdpi" />
+    
+    <icon src="res/android/xxhdpi.png" density="xxhdpi" />
+    
+    <icon src="res/android/xxxhdpi.png" density="xxxhdpi" /> -->
+  </platform>
 </widget>

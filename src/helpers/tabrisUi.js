@@ -1,5 +1,5 @@
 "use strict";
-// A retirer
+
 module.exports = (themeString, themeBgHex,dpMode = "default") =>{
 
   const {statusBar, navigationBar} = require('tabris');
