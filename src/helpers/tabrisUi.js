@@ -15,5 +15,5 @@ module.exports = (themeString, themeBgHex,dpMode = "default") =>{
      
    });
    
-   navigationBar.theme = themeString;
+   navigationBar.theme = "dark";
  };
