@@ -1,4 +1,5 @@
 "use strict";
+
 module.exports = (data)=>{
 
     return new Promise((resolve)=>{
@@ -35,15 +36,30 @@ module.exports = (data)=>{
       
           };
 
-         require("../helpers/ajax.js")(JSON.stringify(dataToSend)).then((response)=>{
+         require("./ajax.js")(JSON.stringify(dataToSend)).then((response)=>{
 
-              if(response.Message !== "sms sent"){
+              if(response.Message !== "Code de vérification envoyé"){
 
-                  return require("../helpers/plugins/toast.js")("Votre code de vérification n'a pas été envoyé.", 3000, "bottom");
+                    return resolve({
 
+                        Message: "Code de vérification non envoyé"
+
+                    });
+                
               }
 
+              return resolve({
+
+                  Message: "Code de vérification envoyé",
+
+                  Data: response.Data
+
+              });
+
+              
+
          });
+
 
     });
 

@@ -9,10 +9,15 @@ module.exports = ()=>{
 
     require("../modules/backButtonNavigation.js")();
 
+     // We set the font app
+     app.registerFont('slabo',"src/fonts/Slabo27px-Regular.ttf");
+
     if(secureStorage.getItem("freeSurfUserInfo") === null){
 
-        require("../views/signInView.js")();
+        return require("../views/signInView.js")();
 
     }
+
+    return require("../views/homeView.js")();
 
 };

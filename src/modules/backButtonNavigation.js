@@ -18,6 +18,10 @@ module.exports = ()=>{
 
             kindOfAnimation.opacity = 0;
 
+         }else{
+
+            return false;
+
          }
 
         // This is a precaution i want to be sure that the animation happen only if the view need to be animated
