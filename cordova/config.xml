@@ -22,9 +22,9 @@
     <!-- This hack is for Android 9 and up for authorizing the app to go to internet -->
     <!-- We need to put it to false in production but i think that in production mode $IS_DEBUG === false -->
     <!-- Problem during the development phase with the tabris audio plugin, i put it in comment for now -->
-    <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
+    <!-- <edit-config file="AndroidManifest.xml" target="/manifest/application" mode="merge">
       <application android:usesCleartextTraffic="$IS_DEBUG" />
-    </edit-config>
+    </edit-config> -->
     
     <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest">
       

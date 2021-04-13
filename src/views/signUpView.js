@@ -77,17 +77,17 @@ module.exports = ()=>{
         .onTap(({target})=>{
 
 
-            if(target.parent().find("#[asswordInscriptionInput]").only().revealPassword === false){
+            if(target.parent().find("#password").only().revealPassword === false){
 
-                target.parent().find("#[asswordInscriptionInput]").only().revealPassword = true;
+                target.parent().find("#password").only().revealPassword = true;
 
                 return target.image = {src: "src/icons/hide-password.png"};
 
             }
 
-            if(target.parent().find("#[asswordInscriptionInput]").only().revealPassword === true){
+            if(target.parent().find("#password").only().revealPassword === true){
 
-                target.parent().find("#[asswordInscriptionInput]").only().revealPassword = false;
+                target.parent().find("#password").only().revealPassword = false;
 
                 return target.image = {src: "src/icons/show-password.png"};
 
